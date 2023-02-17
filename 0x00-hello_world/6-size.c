@@ -1,8 +1,11 @@
 #include <stdio.h>
+
 /**
- * main - A program that prints the size f various types
- * Return (0) Success 
+ * main - Entry point
+ *
+ * Return: (0) Success 
  */
+
 int main (void) 
 {
 	char a;

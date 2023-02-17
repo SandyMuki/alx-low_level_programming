@@ -1,0 +1,30 @@
+/**
+ * main - Prints last digit randomly
+ * whether greater than 5, less than 6 or equivalent to 0
+ *
+ * Return: 0
+ */
+int main(void)
+{
+	int n;
+
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+
+	if ((n % 10) > 5)
+	{
+		printf("Last value of %d is %d and is greatr than the value 5\n",
+				n, n % 10);
+	}
+	else if ((n % 10) < 6 && (n % 10) != 0)
+	{
+		printf("Last value of %d is %d and is less than 6 and not 0\n",
+				n, n % 10);
+	}
+	else
+	{
+		printf("Last value of %d is %d and is 0\n",
+				n, n % 10);
+	}
+	return (0);
+}

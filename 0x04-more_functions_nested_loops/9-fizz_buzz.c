@@ -2,37 +2,38 @@
 #include <stdio.h>
 
 /**
- * main - a program that prints FizzBuzz
+ * main - a program that prints Fizz Buzz and 1 to 100
  * Return: 0
  */
 
 int main(void)
 
 {
-	int a; 
+	int a;
 
 	for (a = 1; a <= 100; a++)
 	{
 	if ((a % 3 == 0) && (a % 5 == 0))
 	{
-	return ("Fizz Buzz");
+	printf("FizzBuzz");
 	}
 	else if (a % 3 == 0)
 	{
-	return ("Fizz");
+	printf("Fizz");
 	}
 	else if (a % 5 == 0)
 	{
-	return("Buzz");
+	printf("Buzz");
 	}
 	else
-	return ("%d", a);
+	{
+	printf("%d", a);
 	}
 	if (a != 100)
 	{
-	return (" ");
+	printf(" ");
 	}
-	return ('\n');
-	
-	return (0);;
+	}
+	printf("\n");
+	return (0);
 }

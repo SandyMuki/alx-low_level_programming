@@ -3,7 +3,7 @@
 
 /**
  * print_array - print n elements and an array of integers
- * @: array of integers
+ * @a: array of integers
  * @n: number of elements of the array being printed
  * Return: void
  */

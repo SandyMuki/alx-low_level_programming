@@ -1,15 +1,15 @@
 #include "main.h"
 void _puts(char *str)
-#include <stdio.h>
+#include<stdio.h>
 /**
- * main - starting point
- * Return: 0 always when successful
+ * main - start here
+ *
+ * Return: Always
  */
-
 int main(void)
 
 {
-	puts("\"Programming is like building a multiligual pussle");
-
-	return (0);
+        _puts("\"At the end of the day, my goal was to be the
+                best hacker\"\n\t- Kevin Mitnick");
+        return (0);
 }

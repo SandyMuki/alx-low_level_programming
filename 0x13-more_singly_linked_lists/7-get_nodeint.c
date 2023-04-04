@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * get_nodeint_at_index(listint_t -  returns the nth node of a linked list
+ * get_nodeint_at_index -  returns the nth node of a linked list
  * @head: first node
  * @index: node's indext that needs to return starting 0
  *

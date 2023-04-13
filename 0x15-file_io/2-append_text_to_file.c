@@ -13,12 +13,12 @@ int append_text_to_file(const char *filename, char *text_content)
 	int fd, len = 0, bytes_output = 0, success = -1;
 
 	if (!filename)
-		return success; 
-	
+		return (success);
+
 	fd = open(filename, O_WRONLY | O_APPEND);
 
 	if (fd == -1)
-		return success;
+		return (success);
 
 	if (text_content)
 	{
@@ -29,8 +29,7 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (bytes_output == len)
 		success = 1;
-	
-	
+
 	close(fd);
 	return (success);
 }

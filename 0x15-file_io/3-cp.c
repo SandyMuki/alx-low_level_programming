@@ -37,10 +37,15 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
-	if (close(file_from_dc) == -1 || close(file_to_dc) == -1)
+	if (nread == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %d\n", file_from_dc);
 		exit(98);
 	}
-	return (0);
+	if (close(file_from_dc) == -1 || close(file_to_dc) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from_dc);
+		exit(100);
+	}
+		return (0);
 }

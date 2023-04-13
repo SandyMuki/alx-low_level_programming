@@ -20,20 +20,20 @@ int main(int argc, char *argv[])
 	file_to_dc = open(argv[1], O_RDONLY);
 	if (file_from_dc == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	file_to_dc = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file_to_dc == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't write to  %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to  %s\n", argv[2]);
 		exit(99);
 	}
 	while ((r = read(file_from_dc, buf, 1024)) > 0)
 	{
 		if (write(file_to_dc, buf, r) == -1)
 		{
-			dprintf(STDERR_FILENO, "Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			close(file_from_dc);
 			close(file_to_dc);
 			exit(99);
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 	}
 	if (close(file_from_dc) == -1 || close(file_to_dc) == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", file_from_dc);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from_dc);
 		exit(100);
 	}
 	return (0);

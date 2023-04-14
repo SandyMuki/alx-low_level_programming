@@ -40,6 +40,8 @@ int main(int argc, char *argv[])
 	if (nread == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %d\n", file_from_dc);
+		close(file_from_dc);
+		close(file_to_dc);
 		exit(98);
 	}
 	if (close(file_from_dc) == -1 || close(file_to_dc) == -1)

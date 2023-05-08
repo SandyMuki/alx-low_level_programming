@@ -9,27 +9,26 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
+	int fd, len = 0, bytes_output = 0, success = -1;
 
-        int fd, len = 0, bytes_output = 0, success = -1;
+	if (!filename)
+		return (success);
 
-        if (!filename)
-                return (success);
+	fd = open(filename, O_WRONLY | O_APPEND);
 
-        fd = open(filename, O_WRONLY | O_APPEND);
+	if (fd == -1)
+		return (success);
 
-        if (fd == -1)
-                return (success);
+	if (text_content)
+	{
+		while (text_content[len] != '\0')
+			len++;
+		bytes_output = write(fd, text_content, len);
+	}
 
-        if (text_content)
-        {
-                while (text_content[len] != '\0')
-                        len++;
-                bytes_output = write(fd, text_content, len);
-        }
+	if (bytes_output == len)
+		success = 1;
 
-        if (bytes_output == len)
-                success = 1;
-
-        close(fd);
-        return (success);
+	close(fd);
+	return (success);
 }
